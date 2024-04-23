@@ -1,11 +1,10 @@
-import sys
-import os
-from .lexer import Lexer  # Updated to relative import
-from .language_parser import MyRecursiveDescentParser  # Assuming this also needs updating
-
 import tkinter as tk
 from tkinter import scrolledtext
 from tkinter import messagebox
+
+from lexer import Lexer  # Changed to absolute import
+from language_parser import MyRecursiveDescentParser  # Changed to absolute import
+
 
 class LanguageParserGUI:
     def __init__(self, master):
@@ -34,7 +33,7 @@ class LanguageParserGUI:
 
 def main():
     root = tk.Tk()
-    gui = LanguageParserGUI(root)
+    app = LanguageParserGUI(root)
     root.mainloop()
 
 if __name__ == "__main__":

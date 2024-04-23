@@ -1,4 +1,4 @@
-from Language_project.lexer import Lexer
+from lexer import Lexer
 
 class ParserError(Exception):
     """ Custom exception for parser errors. """
@@ -6,7 +6,7 @@ class ParserError(Exception):
         super().__init__(f"{message}: {token}")
         self.token = token
 
-class RecursiveDescentParser:
+class MyRecursiveDescentParser:
     def __init__(self, tokens):
         self.tokens = tokens
         self.current_token = None
@@ -127,5 +127,5 @@ if __name__ == "__main__":
     """
     lexer = Lexer(code)
     tokens = lexer.tokenize()
-    parser = RecursiveDescentParser(tokens)
+    parser = MyRecursiveDescentParser(tokens)
     parser.parse()
